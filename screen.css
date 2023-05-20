@@ -1,0 +1,186 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	font-size: 18px;
+	background: #f3f3f3;
+}
+.wrapper,
+.content-wrapper {
+	margin: 0 auto;
+	padding: 0 20px;
+}
+.wrapper {
+	max-width: 1020px;
+}
+.content-wrapper {
+	max-width: 760px;
+}
+
+header {
+	position: sticky;
+	top: 0;
+	background-color: beige;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+header div {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+header .logo {
+	font-size: 30px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+nav ul {
+	display: flex;
+	height: 100%;
+	list-style: none;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+}
+nav ul li a {
+	display: inline-block;
+	padding: 20px;
+}
+nav ul li a.active,
+nav ul li a:hover {
+	background-color: #fff;
+}
+.teaser-image {
+	max-height: 540px;
+	overflow: hidden;
+}
+figure img {
+	display: block;
+	width: 100%;
+	object-fit: contain;
+}
+
+h1 {
+	font-size: 35px;
+	text-align: center;
+}
+h2 {
+	margin-bottom: 10px;
+}
+a {
+	color: #000;
+	text-decoration: none;
+	transition-duration: 0.3s;
+}
+a:hover {
+	color: darkred;
+}
+main {
+	flex: 1;
+}
+
+.content {
+	position: relative;
+	top: -75px;
+	margin-bottom: -50px;
+}
+
+.content .content-wrapper {
+	padding-bottom: 25px;
+	background: #f9f9f9;
+}
+
+.block:not(:first-child) {
+	padding-top: 50px;
+}
+
+.title {
+	padding-top: 17px;
+}
+
+.text {
+	padding-top: 25px;
+}
+
+.text ul {
+	margin: 10px 0 0 20px;
+}
+
+footer {
+	background: beige;
+	padding: 15px 0;
+}
+footer div {
+	display: flex;
+	justify-content: space-between;
+}
+
+footer div ul {
+	display: flex;
+	list-style: none;
+}
+
+footer div ul li {
+	margin-left: 20px;
+}
+
+/**
+ * Künstler
+ */
+.kuenstler-liste {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	margin-top: 25px;
+}
+
+.kuenstler {
+	position: relative;
+	height: 150px;
+	width: calc(50% - 10px);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.kuenstler .overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-weight: bold;
+	background: rgba(255, 255, 255, 0.8);
+	transition-duration: 0.3s;
+}
+
+.kuenstler .overlay:hover {
+	color: darkred;
+	background: rgba(255, 255, 255, 0.9);
+}
+
+.kuenstler.konrad {
+	background-image: url('./bilder/konrad/konrad-1.jpg');
+}
+.kuenstler.otto {
+	background-image: url('./bilder/otto/otto-1.jpg');
+}
+.kuenstler.assisi {
+	background-image: url('./bilder/assisi/assisi-1.jpg');
+}
+.kuenstler.guillery {
+	background-image: url('./bilder/guillery/guillery-1.jpg');
+}
+.kuenstler.meister {
+	background-image: url('./bilder/meister/meister-1.jpg');
+}
+.kuenstler.barboccio {
+	background-image: url('./bilder/barboccio/barboccio-1.jpg');
+}

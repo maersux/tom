@@ -2,31 +2,24 @@
 	margin: 0;
 	padding: 0;
 }
+html {
+	scroll-padding-top: 70px;
+}
 body {
 	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
 	font-size: 18px;
 	background: #f3f3f3;
 }
-.wrapper,
-.content-wrapper {
-	margin: 0 auto;
-	padding: 0 20px;
-}
-.wrapper {
-	max-width: 1020px;
-}
-.content-wrapper {
-	max-width: 760px;
-}
 
+/**
+ * Header + Footer
+ */
 header {
 	position: sticky;
 	top: 0;
 	background-color: beige;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+	z-index: 1;
 }
 header div {
 	display: flex;
@@ -38,7 +31,6 @@ header .logo {
 	font-weight: bold;
 	text-transform: uppercase;
 }
-
 nav ul {
 	display: flex;
 	height: 100%;
@@ -53,61 +45,6 @@ nav ul li a {
 nav ul li a.active,
 nav ul li a:hover {
 	background-color: #fff;
-}
-.teaser-image {
-	max-height: 540px;
-	overflow: hidden;
-}
-figure img {
-	display: block;
-	width: 100%;
-	object-fit: contain;
-}
-
-h1 {
-	font-size: 35px;
-	text-align: center;
-}
-h2 {
-	margin-bottom: 10px;
-}
-a {
-	color: #000;
-	text-decoration: none;
-	transition-duration: 0.3s;
-}
-a:hover {
-	color: darkred;
-}
-main {
-	flex: 1;
-}
-
-.content {
-	position: relative;
-	top: -75px;
-	margin-bottom: -50px;
-}
-
-.content .content-wrapper {
-	padding-bottom: 25px;
-	background: #f9f9f9;
-}
-
-.block:not(:first-child) {
-	padding-top: 50px;
-}
-
-.title {
-	padding-top: 17px;
-}
-
-.text {
-	padding-top: 25px;
-}
-
-.text ul {
-	margin: 10px 0 0 20px;
 }
 
 footer {
@@ -127,6 +64,94 @@ footer div ul {
 footer div ul li {
 	margin-left: 20px;
 }
+
+/**
+ * Inhaltselemente
+ */
+h1 {
+	font-size: 35px;
+	text-align: center;
+}
+h2 {
+	margin-bottom: 10px;
+}
+a {
+	color: #000;
+	text-decoration: none;
+	transition-duration: 0.3s;
+}
+a:hover {
+	color: darkred;
+}
+main {
+	flex: 1;
+}
+.wrapper,
+.content-wrapper {
+	margin: 0 auto;
+	padding: 0 20px;
+}
+.wrapper {
+	max-width: 1020px;
+}
+.content-wrapper {
+	max-width: 760px;
+}
+.content {
+	position: relative;
+	top: -75px;
+	margin-bottom: -50px;
+}
+.content .content-wrapper {
+	padding-bottom: 25px;
+	background: #f9f9f9;
+}
+.block:not(:first-child) {
+	padding-top: 50px;
+}
+.title {
+	padding-top: 17px;
+}
+.text {
+	padding-top: 25px;
+}
+.text ul {
+	margin: 10px 0 0 20px;
+}
+.teaser-image {
+	height: 540px;
+	width: 100%;
+	max-width: 1020px;
+	margin: 0 auto;
+}
+.teaser-image .image {
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+}
+.teaser-image .image.kunstrichtung {
+	background-image: url("./bilder/sotio/sotio-1.jpg");
+	background-position: 0 25%;
+}
+.teaser-image .image.bekannte-kuenstler {
+	background-image: url("./bilder/verdun/verdun-2.jpg");
+}
+.teaser-image .image.werke {
+	background-image: url("./bilder/sotio/sotio-2.jpg");
+}
+figure {
+	padding-bottom: 25px;
+}
+figure img {
+	display: block;
+	width: 100%;
+	object-fit: contain;
+}
+figure figcaption {
+	padding-bottom: 10px;
+}
+
 
 /**
  * Künstler
@@ -166,21 +191,38 @@ footer div ul li {
 	background: rgba(255, 255, 255, 0.9);
 }
 
-.kuenstler.konrad {
-	background-image: url('./bilder/konrad/konrad-1.jpg');
+.kuenstler.claricia {
+	background-image: url('./bilder/claricia/claricia-1.jpg');
 }
-.kuenstler.otto {
-	background-image: url('./bilder/otto/otto-1.jpg');
+.kuenstler.herrad {
+	background-image: url('./bilder/herrad/herrad-1.jpg');
 }
-.kuenstler.assisi {
-	background-image: url('./bilder/assisi/assisi-1.jpg');
+.kuenstler.facundus {
+	background-image: url('./bilder/facundus/facundus-1.jpg');
 }
-.kuenstler.guillery {
-	background-image: url('./bilder/guillery/guillery-1.jpg');
+.kuenstler.bingen {
+	background-image: url('./bilder/bingen/bingen-1.jpg');
 }
-.kuenstler.meister {
-	background-image: url('./bilder/meister/meister-1.jpg');
+.kuenstler.sotio {
+	background-image: url('./bilder/sotio/sotio-1.jpg');
 }
-.kuenstler.barboccio {
-	background-image: url('./bilder/barboccio/barboccio-1.jpg');
+.kuenstler.verdun {
+	background-image: url('./bilder/verdun/verdun-1.jpg');
+}
+
+/**
+ * Werke
+ */
+.kuenstler-werke {
+	padding-bottom: 50px;
+}
+.kuenstler-werke .werke {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 20px;
+}
+.kuenstler-werke figure {
+	width: calc(50% - 10px);
 }
